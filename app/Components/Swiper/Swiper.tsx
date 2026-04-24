@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 
 interface User {
@@ -32,7 +33,7 @@ const Swipers = ({Users}:{Users: User[]  | undefined}) => {
                     mousewheel={true}
                     keyboard={true}
                     modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                    className="mySwiper flex "
+                    className="mySwiper "
                 >
                     {Users?.map((user, index) => (
                         <SwiperSlide className="p-5 " key={index}>
@@ -53,9 +54,11 @@ const Swipers = ({Users}:{Users: User[]  | undefined}) => {
                                     {`Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eaque!`}
                                 </p>
                                 <div className="card-actions justify-end">
+                                    <Link href={`/user/${index}`} className="w-full">
                                     <button className="btn btn-primary w-full">
                                         View Profile
                                     </button>
+                                     </Link>
                                 </div>
                             </div>
                         </div>

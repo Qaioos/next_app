@@ -8,9 +8,10 @@ import { AiOutlineProduct } from "react-icons/ai";
 import Swipers from "./Components/Swiper/Swiper";
 
 
+import { getData } from "./FetchData/DataUsers";
  const  Home = async () =>{
-  const res = await fetch("https://randomuser.me/api/?results=10");
-  const data = await res.json();
+
+    const data = await getData();
 
     return (
         <>
@@ -31,23 +32,24 @@ import Swipers from "./Components/Swiper/Swiper";
                 </div>
                 <hr />
 
-                <Swipers Users={data.results}/>
-
+                <Swipers Users={data}/>
+ 
                 <hr />
-                <div className="flex align-middle justify-between items-center flex-row p-1 ">
+                <div className="flex bg-gray-100  align-middle justify-around gap-150 items-center flex-row p-1 ">
                     <p className="text-center my-15">
                         Showing 10 of 10 results
                     </p>
-                    <div className="flex">
-                        <button disabled className="btn  opacity-50 disabled:cursor-not-allowed  w-1/2 mr-2">
+                    <div className="flex justify-around">
+                        <button disabled className="btn  opacity-50 disabled:cursor-not-allowed  w-1/3 mr-2">
                             Previous
                         </button> 
-                        <button className="btn  w-1/2 mr">
+                        <button className="btn  w-1/3 ">
                             Next
                         </button>
                     </div>
                 </div>
             </main>
+            <hr />
         </>
     );
 }
