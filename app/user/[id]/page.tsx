@@ -6,6 +6,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { MdOutlinePhone } from "react-icons/md";
 import { TbWorldWww } from "react-icons/tb";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Location from "@/app/Components/Location/Location";
 
 interface Props {
     params: Promise<{ id: string }>;
@@ -83,23 +84,9 @@ const page = async ({ params }: Props) => {
                     <div className="card-body items-center p-2">
                         <h2 className="card-title">Location</h2>
                         <p>{data?.[userIndex]?.location?.city}</p>
-                        <p>
-                            la:
-                            {data?.[userIndex]?.location.coordinates.latitude}
-                        </p>
-                        <p>
-                            lo:
-                            {data?.[userIndex]?.location.coordinates.longitude}
-                        </p>
                     </div>
                     <div className="w-full h-40 overflow-hidden  ">
-                        <iframe
-                            width="100%"
-                            height="200"
-                            loading="lazy"
-                            className="rounded-lg border"
-                            src={`https://maps.google.com/maps?q=${data?.[userIndex]?.location.coordinates.longitude},${data?.[userIndex]?.location.coordinates.latitude}&z=3&output=embed`}
-                        ></iframe>
+                    <Location coordinatesData={data?.[userIndex]?.location?.coordinates} />
                     </div>
                 </div>
             </article>
