@@ -26,7 +26,7 @@ const Swipers = ({Users}:{Users: User[]  | undefined}) => {
             <div className="w-full bg-gray-100 p-5">
                 <Swiper
                     spaceBetween={200}
-                    slidesPerView={4}
+                    slidesPerView={1}
                     cssMode={true}
                     navigation={true}
                     pagination={true}
@@ -34,6 +34,17 @@ const Swipers = ({Users}:{Users: User[]  | undefined}) => {
                     keyboard={true}
                     modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                     className="mySwiper "
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    }}
                 >
                     {Users?.map((user, index) => (
                         <SwiperSlide className="p-5 " key={index}>

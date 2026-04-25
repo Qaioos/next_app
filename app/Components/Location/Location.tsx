@@ -1,9 +1,3 @@
-"use client";
-
-import { Marker } from "react-leaflet";
-import { MapContainer } from "react-leaflet/MapContainer";
-
-import { TileLayer } from "react-leaflet/TileLayer";
 
 const Location = ({
     coordinatesData,
