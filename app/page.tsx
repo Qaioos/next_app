@@ -1,5 +1,3 @@
-
-
 import { AiOutlineInsertRowAbove } from "react-icons/ai";
 import { IoFilter } from "react-icons/io5";
 import PageHeadrs from "./Components/Shared/PageHeader/PageHeadrs";
@@ -20,9 +18,14 @@ import SwiperSkeleton from "./Components/Loading/SwiperSkeleton";
                 <div className="flex justify-between items-center m-2">
                     <div className="flex items-center  m-1 px-1 ">
                         <IoFilter />
-                        <p className="mr-3">Filter</p>
+                        <p className="mx-2">Filter</p>
                         <MdSort />
-                        <p className="mx-1">Sort by: Name</p>
+                        <p className="mx-2">Sort by:
+                            <select className="bg-transparent border-none focus:outline-none">
+                            <option value="Name">Name</option>
+                            <option value="city">city</option>
+                            </select>
+                            </p>
                     </div>
 
                     <div className="flex">
