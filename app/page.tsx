@@ -6,9 +6,9 @@ import PageHeadrs from "./Components/Shared/PageHeader/PageHeadrs";
 import { MdSort } from "react-icons/md";
 import { AiOutlineProduct } from "react-icons/ai";
 import Swipers from "./Components/Swiper/Swiper";
-
-
+import { Suspense } from "react";
 import { getData } from "./FetchData/DataUsers";
+import SwiperSkeleton from "./Components/Loading/SwiperSkeleton";
  const  Home = async () =>{
 
     const data = await getData();
@@ -31,9 +31,10 @@ import { getData } from "./FetchData/DataUsers";
                     </div>
                 </div>
                 <hr />
-
-                <Swipers Users={data}/>
- 
+                
+                <Suspense fallback={<SwiperSkeleton />}>
+                    <Swipers Users={data} />
+                </Suspense>
                 <hr />
                 <div className="flex bg-gray-100   justify-around  items-center flex-row p-1 ">
                     <p className="text-center my-5">
