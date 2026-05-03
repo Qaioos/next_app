@@ -29,7 +29,7 @@ const UserSkeleton = () => {
                     },
                 }}
             >
-                {Array.from({ length: 10 }).map((_, index) => (
+                {Array.from({ length: 5 }).map((_, index) => (
                     <SwiperSlide className="p-5 " key={index}>
                         <div className="card bg-base-100 w-96 shadow-sm animate-pulse">
                             <figure>
