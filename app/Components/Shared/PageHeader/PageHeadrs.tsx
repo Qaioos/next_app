@@ -1,5 +1,6 @@
-import React from "react";
+
 import { IoIosSearch } from "react-icons/io";
+import SearchBar from "./SearchOfUsers";
 
 const PageHeadrs = ({ title }: { title: string }) => {
     return (
@@ -15,12 +16,8 @@ const PageHeadrs = ({ title }: { title: string }) => {
                 </p>
             </div>
             <div className="search  w-1/3 relative ">
-                <input
-                    className="w-[208px] md:w-[400px]   p-2 pl-7 border border-gray-300 rounded-md"
-                    type="text"
-                    placeholder="Search team members..."
-                />
-                <IoIosSearch className="text-gray-500 absolute top-3 left-2  " />
+                
+                <SearchBar />
             </div>
         </header>
     );
