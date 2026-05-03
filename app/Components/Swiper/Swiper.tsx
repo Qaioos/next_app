@@ -46,7 +46,7 @@ const Swipers = ({Users}:{Users: User[]  | undefined}) => {
                         },
                     }}
                 >
-                    {Users?.map((user, index) => (
+                    {Users.map((user, index) => (
                         <SwiperSlide className="p-5 " key={index}>
                         <div className="card bg-base-100 w-96 shadow-sm">
                             <figure>
