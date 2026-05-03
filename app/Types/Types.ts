@@ -8,23 +8,23 @@ export interface Todos{
 }
 
 export interface User {
-    picture: {
+    picture?: {
         large: string |StaticImport |undefined;
     };
-    name: {
+    name?: {
         first: string;
         last: string;
     };
-    location: {
+    location?: {
         city: string;
         coordinates: {
             latitude: string;
             longitude: string;
         };
     };
-    email: string;
-    phone: string;
-    login: {
+    email?: string;
+    phone?: string;
+    login?: {
         username: string;
     };
 }
