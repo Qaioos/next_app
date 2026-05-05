@@ -7,12 +7,15 @@ import Swipers from "./Components/Swiper/Swiper";
 import { Suspense } from "react";
 import { getData } from "./FetchData/DataUsers";
 import SwiperSkeleton from "./Components/Loading/SwiperSkeleton";
+import Opacity from "./Components/Shared/motion/Opacity";
  const  Home = async () =>{
 
     const data = await getData();
 
     return (
         <>
+
+            <Opacity>
             <PageHeadrs title="Team Directory" />
             <main>
                 <div className="flex justify-between items-center m-2">
@@ -33,13 +36,11 @@ import SwiperSkeleton from "./Components/Loading/SwiperSkeleton";
                         <AiOutlineInsertRowAbove className="mx-1 w-6.5 h-6.5" />
                     </div>
                 </div>
-                <hr />
                 
                 <Suspense fallback={<SwiperSkeleton />}>
                     <Swipers Users={data} />
                 </Suspense>
-                <hr />
-                <div className="flex bg-gray-100   justify-around  items-center flex-row p-1 ">
+                <div className="flex bg-gray-100  shadow   justify-around  items-center flex-row p-1 ">
                     <p className="text-center my-5">
                         Showing 10 of 10 results
                     </p>
@@ -54,6 +55,7 @@ import SwiperSkeleton from "./Components/Loading/SwiperSkeleton";
                 </div>
             </main>
             <hr />
+        </Opacity>
         </>
     );
 }

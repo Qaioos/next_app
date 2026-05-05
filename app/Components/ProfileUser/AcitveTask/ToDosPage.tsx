@@ -3,6 +3,7 @@ import { Todos } from "@/app/Types/Types";
 
 import { FaTasks } from "react-icons/fa";
 import { TbPlayerRecordFilled } from "react-icons/tb";
+import RightToLeft from "../../Shared/motion/RightToLeft";
 
     
 
@@ -11,7 +12,10 @@ import { TbPlayerRecordFilled } from "react-icons/tb";
 
 const ToDosPage = ({ ToDos }: { ToDos: Todos[] }) => {
     return (
+        
         <div className="flex-1 bg-white rounded-2xl">
+        <RightToLeft>
+
             <header className="flex justify-between w-full items-center p-4">
                 <div className="flex items-center  gap-2">
                     <FaTasks className="text-2xl font-bold text-blue-700" />
@@ -36,7 +40,9 @@ const ToDosPage = ({ ToDos }: { ToDos: Todos[] }) => {
                     ))}
                 </ul>
             </main>
+          </RightToLeft>
         </div>
+
     );
 };
 
